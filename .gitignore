@@ -6,3 +6,5 @@ bundle/*
 
 # ignore .swp files
 *.swp
+# ignore .pyc files
+*.pyc
