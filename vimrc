@@ -17,7 +17,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'gregsexton/gitv'
 Plugin 'sjl/gundo.vim'
-" tmux
+"" tmux
 Plugin 'erikw/tmux-powerline'
 Plugin 'edkolev/tmuxline.vim'
 "" utility
@@ -44,7 +44,7 @@ Plugin 'arecarn/crunch.vim'
 Plugin 'arecarn/selection.vim'
 Plugin 'ashisha/image.vim'
 Plugin 'chrisbra/csv.vim'
-" libs
+"" libs
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 "" language specific
@@ -129,7 +129,7 @@ autocmd FileType python setlocal tabstop=8
 autocmd FileType python setlocal softtabstop=4
 autocmd FileType python setlocal shiftwidth=4
 "" }}}
-" buffer settings {{{
+"" buffer settings {{{
 set autoread
 set backupdir=.,~/.vimtmp,/tmp
 set confirm
@@ -155,7 +155,7 @@ set modelines=30
 set pumheight=6
 set report=2
 set ruler
-"set showcmd
+set showcmd
 set noshowmode
 set showtabline=2
 set scroll=2
@@ -234,8 +234,8 @@ inoremap <expr>	<C-J>		pumvisible() ? "\<C-N>" : "\<Esc><C-W><C-J>"
 inoremap <expr>	<C-K>		pumvisible() ? "\<C-P>" : "\<Esc><C-W><C-K>"
 inoremap <expr> <PageDown>	pumvisible() ? "\<PageDown>\<C-P>\<C-N>" : "\<PageDown>"
 inoremap <expr> <PageUp>	pumvisible() ? "\<PageUp>\<C-P>\<C-N>" : "\<PageUp>"
-"inoremap <C-D>	<C-X><C-O><C-N>
-"inoremap <C-F>	<C-X><C-R>
+inoremap <C-D>	<C-X><C-O><C-N>
+inoremap <C-F>	<C-X><C-R>
 "" end line semicolon ;
 autocmd		FileType	c		nnoremap ; $a;
 autocmd		FileType	cpp		nnoremap ; $a;
@@ -460,7 +460,9 @@ let g:startify_list_order = [
 		\ 'sessions',
 		\ ]
 let g:startify_files_number = 3
-let g:startify_bookmarks = [ {'init': '  ~/.config/nvim/init.vim'}]
+let g:startify_bookmarks = [
+		\{'vimrc': '  ~/.config/.vim/vimrc'},
+		\{'nvimrc': '  ~/.config/nvim/init.vim'}]
 let g:startify_custom_header =
 		\ map(split(system('tips.py | cowsay -f $(ls /usr/share/cowsay/cows | shuf -n 1 | cut -d. -f1)'), '\n'), '"   ". v:val') + ['']
 let g:startify_change_to_dir = 1
