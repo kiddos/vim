@@ -287,7 +287,7 @@ let g:airline_symbols.whitespace = '⇆ '
 autocmd VimEnter * silent! :GitGutterDisable
 "" }}}
 "" indent line {{{
-autocmd VimEnter * silent! :IndentLineDisable
+autocmd VimEnter * silent! :IndentLinesDisable
 """}}}
 "" syntasitc settings {{{
 autocmd VimEnter * silent! :SyntasticToggleMode
