@@ -96,3 +96,66 @@ syntax on
 set t_Co=256
 colorscheme malokai
 "" }}}
+"" custom key maps {{{
+" leader
+let mapleader=","
+let localleader="\\"
+" copy, cut, paste, save
+inoremap	<C-C>	<Esc>yy
+inoremap	<C-X>	<Esc>cc
+inoremap	<C-V>	<Esc>pa
+"" typo
+command!	WQ	wq
+command!	Wq	wq
+command!	W	w
+command!	Q	q
+command!	Qa	qa
+command!	QA	qa
+noremap		L	l
+noremap		K	k
+noremap		J	j
+noremap		H	h
+"" moving between splits
+nnoremap  <C-H>	<C-W><C-H>
+nnoremap  <C-J>	<C-W><C-J>
+nnoremap  <C-K>	<C-W><C-K>
+nnoremap  <C-L>	<C-W><C-L>
+"" Tab switching
+nmap	<leader>1	1gt
+nmap	<leader>2	2gt
+nmap	<leader>3	3gt
+nmap	<leader>4	4gt
+nmap	<leader>5	5gt
+nmap	<leader>6	6gt
+nmap	<leader>7	7gt
+nmap	<leader>8	8gt
+nmap	<leader>9	9gt
+" split/close tab
+nmap	<leader><Tab>		:tabedit<CR>
+nmap	<leader>v			:vs<CR>
+nmap	<leader>q			:q<CR>
+nmap	<leader>Q			:q<CR>
+"" jump window
+inoremap	<C-]>	<Esc><C-W><C-]>
+nnoremap	<C-]>	<C-W><C-]>
+"" Omni Complete
+inoremap <expr>	<CR>		pumvisible() ? "\<C-N><C-Y>" : "\<CR>"
+inoremap <expr>	<Down>		pumvisible() ? "\<C-N>" : "\<Down>"
+inoremap <expr>	<Up>		pumvisible() ? "\<C-P>" : "\<Up>"
+inoremap <expr>	<C-J>		pumvisible() ? "\<C-N>" : "\<Esc><C-W><C-J>"
+inoremap <expr>	<C-K>		pumvisible() ? "\<C-P>" : "\<Esc><C-W><C-K>"
+inoremap <expr> <PageDown>	pumvisible() ? "\<PageDown>\<C-P>\<C-N>" : "\<PageDown>"
+inoremap <expr> <PageUp>	pumvisible() ? "\<PageUp>\<C-P>\<C-N>" : "\<PageUp>"
+inoremap <C-D>	<C-X><C-O><C-N>
+inoremap <C-F>	<C-X><C-R>
+"" end line semicolon ;
+autocmd		FileType	c		nnoremap ; $a;
+autocmd		FileType	cpp		nnoremap ; $a;
+autocmd		FileType	objc	nnoremap ; $a;
+autocmd		FileType	java	nnoremap ; $a;
+autocmd		FileType	matlab	nnoremap ; $a;
+autocmd		FileType	php		nnoremap ; $a;
+autocmd		FileType	html	nnoremap ; $a;
+autocmd		FileType	css		nnoremap ; $a;
+autocmd		FileType	javascript nnoremap ; $a;
+"" }}}
