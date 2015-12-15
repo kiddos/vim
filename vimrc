@@ -182,6 +182,7 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType javascript setlocal omnifunc=tern#Complete
+"" }}}
 "" custom key maps {{{
 " leader
 let mapleader=","
@@ -244,4 +245,31 @@ autocmd		FileType	php		nnoremap ; $a;
 autocmd		FileType	html	nnoremap ; $a;
 autocmd		FileType	css		nnoremap ; $a;
 autocmd		FileType	javascript nnoremap ; $a;
+"" }}}
+"" useful functions {{{
+
+"" }}}
+"" Plugin settings
+"" airline settings {{{
+let g:airline_detect_modified = 1
+let g:airline_detect_paste = 1
+let g:airline_detect_crypt = 1
+let g:airline_detect_iminsert = 1
+let g:airline_inactive_collapse = 1
+let g:airline_theme = 'powerlineish'
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '⊳'
+let g:airline_right_sep = '⊲ '
+let g:airline_right_alt_sep = '⌘ '
+let g:airline_left_alt_sep = ''
+let g:airline_symbols.crypt = '☠'
+let g:airline_symbols.linenr = '⇵ '
+let g:airline_symbols.branch = '⎇ '
+let g:airline_symbols.paste = '℘  '
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.whitespace = '⇆ '
 "" }}}
