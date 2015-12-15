@@ -37,6 +37,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'mhinz/vim-startify'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'tyru/open-browser.vim'
 Plugin 'mbbill/undotree'
 Plugin 'kannokanno/previm'
@@ -44,6 +45,8 @@ Plugin 'arecarn/crunch.vim'
 Plugin 'arecarn/selection.vim'
 Plugin 'ashisha/image.vim'
 Plugin 'chrisbra/csv.vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'kiddos/vim-snippets'
 "" libs
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -58,6 +61,7 @@ Plugin 'kiddos/a.vim'
 Plugin 'krisajenkins/vim-java-sql'
 Plugin 'vim-scripts/java_getset.vim'
 Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'tpope/vim-classpath'
 " }}}
 " Matlab {{{
 Plugin 'vim-scripts/octave.vim--'
@@ -119,7 +123,7 @@ setlocal foldmethod=marker
 autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
 autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
 "" general indenting
-set noexpandtab
+set expandtab
 set tabstop=4
 set softtabstop=2
 set shiftwidth=2
@@ -141,6 +145,9 @@ set hidden
 set icon
 set iconstring=vim
 set nowritebackup
+set formatoptions+=t
+autocmd FileType c,cpp,objc,objcpp,java,cs,asm,vhdl,ruby,eruby,python set textwidth=69
+autocmd FileType html,css,javascript,less,sass,scss,elm,matlab,r,vim set textwidth=80
 autocmd VimEnter,BufRead,BufNewFile *.m set filetype=matlab
 autocmd VimEnter,BufRead,BufNewFile *.h set filetype=cpp
 autocmd VimEnter,BufRead,BufNewFile *.ejs set filetype=html
