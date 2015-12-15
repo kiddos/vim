@@ -5,22 +5,30 @@
 set nocompatible
 filetype off
 
-" set the runtime path to include Vundle and initialize
+"" set the runtime path to include Vundle and initialize
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle, required
+"" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" color scheme
+"" color scheme
 Plugin 'kiddos/malokai'
 
-" git
+"" git
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+"" utility
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 filetype plugin indent on
-
 "" editing settings {{{
 set altkeymap
 set autoindent
