@@ -128,6 +128,8 @@ autocmd FileType python setlocal expandtab
 autocmd FileType python setlocal tabstop=8
 autocmd FileType python setlocal softtabstop=4
 autocmd FileType python setlocal shiftwidth=4
+" solve zsh escap delay
+set timeoutlen=1000 ttimeoutlen=0
 "" }}}
 "" buffer settings {{{
 set autoread
@@ -163,7 +165,7 @@ set splitright
 set tabpagemax=20
 set title
 set warn
-"" }}}
+""" }}}
 "" color scheme settings {{{
 set background=dark
 syntax enable
