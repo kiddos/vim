@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kiddos/malokai'
 
 " git
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -52,6 +53,41 @@ autocmd FileType python setlocal expandtab
 autocmd FileType python setlocal tabstop=8
 autocmd FileType python setlocal softtabstop=4
 autocmd FileType python setlocal shiftwidth=4
+"" }}}
+"" buffer settings {{{
+set autoread
+set backupdir=.,~/.vimtmp,/tmp
+set confirm
+set cscopepathcomp=2
+set directory=.,~/.vimtmp,/tmp
+set hidden
+set icon
+set iconstring=vim
+set nowritebackup
+autocmd VimEnter,BufRead,BufNewFile *.m set filetype=objc
+autocmd VimEnter,BufRead,BufNewFile *.h set filetype=cpp
+autocmd VimEnter,BufRead,BufNewFile *.ejs set filetype=html
+autocmd VimEnter,BufRead,BufNewFile *.pro set filetype=make
+"" }}}
+"" window settings {{{
+set cmdheight=2
+set cmdwinheight=6
+set relativenumber
+set fillchars=stl:\ ,stlnc:-,vert:\|,fold:-,diff:-
+set langmenu=en_US.UTF-8
+set laststatus=2
+set modelines=30
+set pumheight=6
+set report=2
+set ruler
+set showcmd
+set noshowmode
+set showtabline=2
+set scroll=2
+set splitright
+set tabpagemax=20
+set title
+set warn
 "" }}}
 "" color scheme settings {{{
 set background=dark
