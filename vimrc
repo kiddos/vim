@@ -27,6 +27,52 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
 
+"" language specific
+" C family {{{
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'OrangeT/vim-csharp'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'kiddos/a.vim'
+"}}}
+" Java {{{
+Plugin 'krisajenkins/vim-java-sql'
+Plugin 'vim-scripts/java_getset.vim'
+Plugin 'artur-shaik/vim-javacomplete2'
+" }}}
+" Matlab {{{
+Plugin 'vim-scripts/octave.vim--'
+" }}}
+" vhdl {{{
+Plugin 'kiddos/vim-vhdl'
+Plugin 'vhda/verilog_systemverilog.vim'
+" }}}
+" ruby {{{
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+" }}}
+" Web {{{
+Plugin 'othree/html5.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'Valloric/MatchTagAlways'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'briancollins/vim-jst'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nono/jquery.vim'
+Plugin 'ap/vim-css-color'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
+Plugin 'moll/vim-node'
+Plugin 'elzr/vim-json'
+Plugin 'burnettk/vim-angular'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'lambdatoast/elm.vim'
+Plugin 'zeekay/vim-html2jade'
+Plugin 'coachshea/jade-vim'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin '1995eaton/vim-better-css-completion'
+" }}}
+
 call vundle#end()
 filetype plugin indent on
 "" editing settings {{{
