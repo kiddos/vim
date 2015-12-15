@@ -32,6 +32,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-projectionist'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'majutsushi/tagbar'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'mhinz/vim-startify'
@@ -128,7 +129,7 @@ autocmd FileType python setlocal tabstop=8
 autocmd FileType python setlocal softtabstop=4
 autocmd FileType python setlocal shiftwidth=4
 "" }}}
-"" buffer settings {{{
+" buffer settings {{{
 set autoread
 set backupdir=.,~/.vimtmp,/tmp
 set confirm
@@ -138,7 +139,7 @@ set hidden
 set icon
 set iconstring=vim
 set nowritebackup
-autocmd VimEnter,BufRead,BufNewFile *.m set filetype=objc
+autocmd VimEnter,BufRead,BufNewFile *.m set filetype=matlab
 autocmd VimEnter,BufRead,BufNewFile *.h set filetype=cpp
 autocmd VimEnter,BufRead,BufNewFile *.ejs set filetype=html
 autocmd VimEnter,BufRead,BufNewFile *.pro set filetype=make
@@ -154,7 +155,7 @@ set modelines=30
 set pumheight=6
 set report=2
 set ruler
-set showcmd
+"set showcmd
 set noshowmode
 set showtabline=2
 set scroll=2
@@ -233,8 +234,8 @@ inoremap <expr>	<C-J>		pumvisible() ? "\<C-N>" : "\<Esc><C-W><C-J>"
 inoremap <expr>	<C-K>		pumvisible() ? "\<C-P>" : "\<Esc><C-W><C-K>"
 inoremap <expr> <PageDown>	pumvisible() ? "\<PageDown>\<C-P>\<C-N>" : "\<PageDown>"
 inoremap <expr> <PageUp>	pumvisible() ? "\<PageUp>\<C-P>\<C-N>" : "\<PageUp>"
-inoremap <C-D>	<C-X><C-O><C-N>
-inoremap <C-F>	<C-X><C-R>
+"inoremap <C-D>	<C-X><C-O><C-N>
+"inoremap <C-F>	<C-X><C-R>
 "" end line semicolon ;
 autocmd		FileType	c		nnoremap ; $a;
 autocmd		FileType	cpp		nnoremap ; $a;
@@ -273,7 +274,7 @@ let g:airline_symbols.paste = '℘  '
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.whitespace = '⇆ '
 "" }}}
-"" GitGutter options {{{
+"" GitGutter settings {{{
 autocmd VimEnter * silent! :GitGutterDisable
 "" }}}
 "" syntasitc settings {{{
@@ -391,7 +392,7 @@ let g:syntastic_jade_checkers = ['jade-lint']
 " R options
 let g:syntastic_enable_r_svtools_checker = 1
 " }}}
-"" YouCompleteMe Options {{{
+"" YouCompleteMe settings {{{
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_auto_trigger = 1
 let g:ycm_min_num_identifier_candidate_chars = 0
@@ -447,3 +448,22 @@ let g:ycm_semantic_triggers =  {
 \	'r' : ['$']
 \ }
 " }}}
+"" startify settings {{{
+let g:startify_list_order = [
+		\ ['   My most recently used files in the current directory:'],
+		\ 'dir',
+		\ ['   My most recently used files:'],
+		\ 'files',
+		\ ['   Bookmarks:'],
+		\ 'bookmarks',
+		\ ['   Sessions:'],
+		\ 'sessions',
+		\ ]
+let g:startify_files_number = 3
+let g:startify_bookmarks = [ {'init': '  ~/.config/nvim/init.vim'}]
+let g:startify_custom_header =
+		\ map(split(system('tips.py | cowsay -f $(ls /usr/share/cowsay/cows | shuf -n 1 | cut -d. -f1)'), '\n'), '"   ". v:val') + ['']
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_enable_special = 0
+"" }}}
