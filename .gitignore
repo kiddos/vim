@@ -3,3 +3,6 @@ bundle/*
 
 # except
 !./bundle/Vundle.vim
+
+# ignore .swp files
+*.swp
