@@ -1,0 +1,5 @@
+# ignore everything in bundle
+./bundle/*
+
+# except
+!./bundle/Vundle.vim
