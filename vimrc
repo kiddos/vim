@@ -391,3 +391,59 @@ let g:syntastic_jade_checkers = ['jade-lint']
 " R options
 let g:syntastic_enable_r_svtools_checker = 1
 " }}}
+"" YouCompleteMe Options {{{
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_identifier_candidate_chars = 0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_echo_current_diagnostic = 0
+let g:ycm_always_populate_location_list = 0
+
+let g:ycm_allow_changing_updatetime = 0
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_string = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_seed_identifiers_with_syntax = 1
+
+let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
+"let g:ycm_server_use_vim_stdout = 1
+"let g:ycm_server_log_level = 'debug'
+let g:ycm_auto_start_csharp_server = 1
+let g:ycm_auto_stop_csharp_server = 1
+let g:ycm_csharp_server_port = 3600
+
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+let g:ycm_key_list_select_completion = []
+let g:ycm_key_list_previous_completion = []
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_key_detailed_diagnostics = '<leader>d'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_filepath_completion_use_working_dir = 1
+let g:ycm_cache_omnifunc = 1
+let g:ycm_use_ultisnips_completer = 0
+let g:ycm_semantic_triggers =  {
+\   'c' : ['->', '.', '<', '#'],
+\   'objc' : ['->', '.', '<', '#'],
+\   'cpp' : ['->', '.', '::', '#', '<'],
+\   'objcpp' : ['->', '.', '::', '#', '<'],
+\   'java' : ['.'],
+\   'ocaml' : ['.', '#'],
+\   'perl' : ['->'],
+\	'css' : [':'],
+\   'php' : ['.', '->', '::', '_', '$', '['],
+\   'javascript' : ['.', "'", '(', '"'],
+\   'cs,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+\	'html' : ['"', '<', '/', '=', '"'],
+\   'ruby' : ['.', '::'],
+\   'lua' : ['.', ':'],
+\   'erlang' : [':'],
+\	'r' : ['$']
+\ }
+" }}}
