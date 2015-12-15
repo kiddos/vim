@@ -46,7 +46,7 @@ Plugin 'arecarn/selection.vim'
 Plugin 'ashisha/image.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'kiddos/vim-snippets'
+Plugin 'honza/vim-snippets'
 "" libs
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
