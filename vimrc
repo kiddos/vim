@@ -273,3 +273,121 @@ let g:airline_symbols.paste = '℘  '
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.whitespace = '⇆ '
 "" }}}
+"" GitGutter options {{{
+autocmd VimEnter * silent! :GitGutterDisable
+"" }}}
+"" syntasitc settings {{{
+autocmd VimEnter * silent! :SyntasticToggleMode
+autocmd	BufWritePost * silent! :SyntasticCheck
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+highlight	SyntasticErrorSign	cterm=BOLD	ctermfg=253	ctermbg=124	guifg=white	guibg=red
+highlight	SyntasticError		cterm=BOLD	ctermfg=253	ctermbg=236	guibg=#2f0000
+highlight	SyntasticErrorLine	cterm=BOLD	ctermfg=253	ctermbg=236	guibg=#2f0000
+
+"" general options
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_echo_current_error = 1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 6
+let g:syntastic_auto_jump = 0
+
+"" language specific options
+" c options
+let g:syntastic_c_check_header = 1
+let g:syntastic_c_compiler_options = "-Wall -g -O3 -fopenmp -std=c99 -pthread -fPIC -fmax-errors=10"
+let g:syntastic_c_include_dirs = ['/usr/include/ImageMagick/']
+" c++ options
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler_options = "-Wall -g -O3 -fopenmp -std=c++11 -pthread -fPIC"
+let g:syntastic_cpp_include_dirs = [
+\		'/usr/include/ImageMagick/',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/Enginio',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/Qt3DCore',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/Qt3DInput',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/Qt3DQuick',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/Qt3DQuickRenderer',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/Qt3DRenderer',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtBluetooth',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtCLucene',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtConcurrent',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtCore',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtDBus',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtDeclarative',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtDesigner',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtDesignerComponents',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtGui',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtHelp',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtLocation',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtMultimedia',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtMultimediaQuick_p',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtMultimediaWidgets',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtNetwork',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtNfc',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtOpenGL',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtOpenGLExtensions',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtPlatformHeaders',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtPlatformSupport',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtPositioning',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtPrintSupport',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtQml',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtQmlDevTools',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtQuick',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtQuickParticles',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtQuickTest',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtQuickWidgets',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtScript',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtScriptTools',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtSensors',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtSerialPort',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtSql',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtSvg',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtTest',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtUiPlugin',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtUiTools',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtWebChannel',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtWebEngine',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtWebEngineWidgets',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtWebKit',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtWebKitWidgets',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtWebSockets',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtWebView',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtWidgets',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtX11Extras',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtXml',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtXmlPatterns',
+\		'/opt/Qt5.5.0/5.5/gcc_64/include/QtZlib',
+\		'.',
+\		'..',
+\		'./include',
+\		'../include']
+" objc options
+let g:syntastic_objc_compiler_options = "-Wall -g -O3 -fPIC `gnustep-config --objc-flags` `gnustep-config --objc-libs` "
+"let g:syntastic_objc_compiler = "clang"
+"let g:syntastic_objc_compiler_options += "-DGNU_GUI_LIBRARY=1 -DGNU_RUNTIME=1 "
+"let g:syntastic_objc_compiler_options += "-DGNUSTEP_BASE_LIBRARY=1 -fno-strict-aliasing "
+"let g:syntastic_objc_compiler_options += "-fexceptions -fobjc-exceptions "
+"let g:syntastic_objc_compiler_options += "-D_NATIVE_OBJC_EXCEPTIONS -pthread -fPIC "
+"let g:syntastic_objc_compiler_options += "-Wall -DGSWARN -DGSDIAGNOSE -Wno-import -g -O2 "
+"let g:syntastic_objc_compiler_options += "-fgnu-runtime -fconstant-string-class=NSConstantString"
+let g:syntastic_objc_include_dirs = ['/usr/include/GNUstep']
+" python options
+let g:syntastic_python_python_exec = '/usr/bin/python'
+let g:syntastic_python_checkers = ['flake8', 'python']
+let g:syntastic_python_flake8_args='--ignore=E501,E225,E302,E303,W391,E226,E231,E701'
+" html options
+let g:syntastic_html_checkers = ['jshint']
+" javascript options
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_closurecompiler_path = '~/Web/tools/google-closure-compiler.jar'
+" jade options
+let g:syntastic_jade_checkers = ['jade-lint']
+" R options
+let g:syntastic_enable_r_svtools_checker = 1
+" }}}
