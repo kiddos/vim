@@ -170,6 +170,18 @@ syntax on
 set t_Co=256
 colorscheme malokai
 "" }}}
+"" omni completeion {{{
+autocmd FileType c setlocal omnifunc=ccomplete#Complete
+autocmd FileType cpp setlocal omnifunc=ccomplete#Complete
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType python setlocal omnifunc=python3complete#Complete
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType html,xhtml setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType javascript setlocal omnifunc=tern#Complete
 "" custom key maps {{{
 " leader
 let mapleader=","
