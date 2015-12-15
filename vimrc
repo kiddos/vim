@@ -4,28 +4,22 @@
 ""
 set nocompatible
 filetype off
-
 "" set the runtime path to include Vundle and initialize
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 "" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 "" color scheme
 Plugin 'kiddos/malokai'
-
 "" git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'gregsexton/gitv'
 Plugin 'sjl/gundo.vim'
-
 " tmux
 Plugin 'erikw/tmux-powerline'
 Plugin 'edkolev/tmuxline.vim'
-
 "" utility
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -43,7 +37,6 @@ Plugin 'arecarn/crunch.vim'
 Plugin 'arecarn/selection.vim'
 Plugin 'ashisha/image.vim'
 Plugin 'chrisbra/csv.vim'
-
 "" language specific
 " C family {{{
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -90,7 +83,6 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin '1995eaton/vim-better-css-completion'
 Plugin 'tpope/vim-markdown'
 " }}}
-
 call vundle#end()
 filetype plugin indent on
 "" editing settings {{{
