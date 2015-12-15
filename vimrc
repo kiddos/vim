@@ -18,6 +18,9 @@ Plugin 'kiddos/malokai'
 "" git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'gregsexton/gitv'
+NeoBundle 'sjl/gundo.vim'
 
 "" utility
 Plugin 'scrooloose/nerdtree'
