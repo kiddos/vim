@@ -33,6 +33,16 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'mhinz/vim-startify'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tyru/open-browser.vim'
+Plugin 'mbbill/undotree'
+Plugin 'kannokanno/previm'
+Plugin 'arecarn/crunch.vim'
+Plugin 'arecarn/selection.vim'
+Plugin 'ashisha/image.vim'
+Plugin 'chrisbra/csv.vim'
 
 "" language specific
 " C family {{{
@@ -78,6 +88,7 @@ Plugin 'coachshea/jade-vim'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin '1995eaton/vim-better-css-completion'
+Plugin 'tpope/vim-markdown'
 " }}}
 
 call vundle#end()
