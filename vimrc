@@ -317,11 +317,11 @@ let g:syntastic_auto_jump = 0
 "" language specific options
 " c options
 let g:syntastic_c_check_header = 1
-let g:syntastic_c_compiler_options = "-Wall -g -O3 -fopenmp -std=c99 -pthread -fPIC -fmax-errors=10"
+let g:syntastic_c_compiler_options = "-Wall -g -O3 -fopenmp -std=c99 -pthread -fPIC -fmax-errors=10 -DDEBUG"
 let g:syntastic_c_include_dirs = ['/usr/include/ImageMagick/']
 " c++ options
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_compiler_options = "-Wall -g -O3 -fopenmp -std=c++11 -pthread -fPIC"
+let g:syntastic_cpp_compiler_options = "-Wall -g -O3 -fopenmp -std=c++11 -pthread -fPIC -DDEBUG"
 let g:syntastic_cpp_include_dirs = [
 \		'/usr/include/ImageMagick/',
 \		'/opt/Qt5.5.0/5.5/gcc_64/include/Enginio',
