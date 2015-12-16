@@ -218,6 +218,11 @@ nnoremap  <C-H>	<C-W><C-H>
 nnoremap  <C-J>	<C-W><C-J>
 nnoremap  <C-K>	<C-W><C-K>
 nnoremap  <C-L>	<C-W><C-L>
+"" large movement
+nmap	J	<C-D>
+nmap	K	<C-U>
+nmap	H	<C-E>
+nmap	L	<C-Y>
 "" Tab switching
 nmap	<leader>1	1gt
 nmap	<leader>2	2gt
