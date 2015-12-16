@@ -46,7 +46,6 @@ Plugin 'arecarn/selection.vim'
 Plugin 'ashisha/image.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 "" libs
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -63,8 +62,9 @@ Plugin 'vim-scripts/java_getset.vim'
 Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'tpope/vim-classpath'
 " }}}
-" Matlab {{{
+" Matlab / R {{{
 Plugin 'vim-scripts/octave.vim--'
+Plugin 'jcfaria/Vim-R-plugin'
 " }}}
 " vhdl {{{
 Plugin 'kiddos/vim-vhdl'
@@ -513,7 +513,7 @@ function! Test_webpage()
   endif
 endfunction
 
-function! Show_Spaces(...)
+function! ShowSpaces(...)
   let @/='\v(\s+$)|( +\ze\t)'
   let oldhlsearch=&hlsearch
   if !a:0
@@ -524,8 +524,8 @@ function! Show_Spaces(...)
   return oldhlsearch
 endfunction
 
-function! Trim_Spaces() range
-  let oldhlsearch=Show_Spaces(1)
+function! TrimSpaces() range
+  let oldhlsearch=ShowSpaces(1)
   execute a:firstline.",".a:lastline."substitute ///gec"
   let &hlsearch=oldhlsearch
 endfunction
@@ -545,9 +545,9 @@ function! Compile_to_CSS()
 endfunction
 
 autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
-command ToggleDotM call Toggle_filetype_dot_m()
-command -bar -nargs=? Show_Spaces call Show_Spaces(<args>)
-command -bar -nargs=0 -range=% Trim_Spaces <line1>,<line2>call Trim_Spaces()
+command! ToggleDotMFiles call Toggle_filetype_dot_m()
+command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
+command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 
 nmap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
 imap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
