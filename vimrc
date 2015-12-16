@@ -256,9 +256,6 @@ autocmd		FileType	html	nnoremap ; $a;
 autocmd		FileType	css		nnoremap ; $a;
 autocmd		FileType	javascript nnoremap ; $a;
 "" }}}
-"" useful functions {{{
-
-"" }}}
 "" Plugin settings
 "" airline settings {{{
 let g:airline_detect_modified = 1
@@ -480,4 +477,94 @@ let g:startify_custom_header =
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 let g:startify_enable_special = 0
+"" }}}
+"" useful functions and keybindings {{{
+function! Toggle_filetype_dot_m()
+  if &ft == "objc"
+    execute ":setlocal ft=matlab"
+  elseif &ft == "matlab"
+    execute ":setlocal ft=objc"
+  endif
+endfunction
+
+function! Test_webpage()
+  if &ft == "php"
+    echom "php file type"
+    let dst = expand('%:t') . ".html"
+    let temp = tempname()
+    execute ":silent ! php % > " . dst
+    execute ":silent ! google-chrome " . dst " > " . temp . " 2>&1 "
+    execute ":pclose!"
+    execute ":redraw!"
+    set splitbelow
+    execute ":6split"
+    execute ":e! " . temp
+    set nosplitbelow
+    let delStatus = delete(dst)
+    if delStatus != 0
+      echo "Fail to Delete temp file"
+    endif
+  elseif &ft == "html"
+    let this_file = expand('%:p')
+    echom "html file type"
+    execute ":silent ! google-chrome " . this_file
+    execute ":pclose!"
+    execute ":redraw!"
+  endif
+endfunction
+
+function! Show_Spaces(...)
+  let @/='\v(\s+$)|( +\ze\t)'
+  let oldhlsearch=&hlsearch
+  if !a:0
+    let &hlsearch=!&hlsearch
+  else
+    let &hlsearch=a:1
+  end
+  return oldhlsearch
+endfunction
+
+function! Trim_Spaces() range
+  let oldhlsearch=Show_Spaces(1)
+  execute a:firstline.",".a:lastline."substitute ///gec"
+  let &hlsearch=oldhlsearch
+endfunction
+
+function! Compile_to_CSS()
+  let src = expand("%:t")
+  let target = expand("%:r") . ".css"
+  let compiler = ""
+  if &ft == "less"
+    let compiler = "less"
+  elseif &ft == "sass"
+    let compiler = "sass"
+  elseif &ft == "scss"
+    let compiler = "scss"
+  endif
+  execute ":silent !".compiler." ".src." > ".target
+endfunction
+
+autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
+command ToggleDotM call Toggle_filetype_dot_m()
+command -bar -nargs=? Show_Spaces call Show_Spaces(<args>)
+command -bar -nargs=0 -range=% Trim_Spaces <line1>,<line2>call Trim_Spaces()
+
+nmap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
+imap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
+nmap  <silent><F2>  :NERDTreeToggle .<CR>
+imap  <silent><F2>  :NERDTreeToggle .<CR>
+nmap  <silent><F3>  :GitGutterToggle<CR>
+imap  <silent><F3>  :GitGutterToggle<CR>
+nmap  <silent><F4>  :IndentLinesToggle<CR>
+imap  <silent><F4>  :IndentLinesToggle<CR>
+nmap  <silent><F5>  :call Test_webpage()<CR>
+imap  <silent><F5>  :call Test_webpage()<CR>
+nmap  <silent><F6>  :call Toggle_ft_m()<CR><CR>
+nmap  <silent><F6>  :call Toggle_ft_m()<CR><CR>
+nmap  <silent><F7>  :setlocal spell!<CR>
+imap  <silent><F7>  :setlocal spell!<CR>
+nmap  <silent><F8>  :Crunch<CR>
+imap  <silent><F8>  :Crunch<CR>
+nmap  <silent><F9>  :TagbarToggle<CR>
+imap  <silent><F9>  :TagbarToggle<CR>
 "" }}}
