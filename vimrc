@@ -250,7 +250,7 @@ inoremap <expr>	<C-K>		pumvisible() ? "\<C-P>" : "\<Esc><C-W><C-K>"
 inoremap <expr> <PageDown>	pumvisible() ? "\<PageDown>\<C-P>\<C-N>" : "\<PageDown>"
 inoremap <expr> <PageUp>	pumvisible() ? "\<PageUp>\<C-P>\<C-N>" : "\<PageUp>"
 inoremap <C-D>	<C-X><C-O><C-N>
-inoremap <C-F>	<C-X><C-R>
+inoremap <C-F>  <C-R><Tab><C-P>
 "" end line semicolon ;
 autocmd		FileType	c		nnoremap ; $a;
 autocmd		FileType	cpp		nnoremap ; $a;
@@ -549,6 +549,7 @@ function! Compile_to_CSS()
   endif
   execute ":silent !".compiler." ".src." > ".target
 endfunction
+
 " commands
 autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
 command! ToggleDotMFiles call Toggle_filetype_dot_m()
@@ -574,8 +575,8 @@ imap  <silent><F8>  :Crunch<CR>
 nmap  <silent><F9>  :TagbarToggle<CR>
 imap  <silent><F9>  :TagbarToggle<CR>
 " tabularize shortcut
-nmap	<leader><space>		:Tabularize / <CR>
-nmap	<leader>"			:Tabularize /"[^"]*"<CR>
-nmap	<leader>(			:Tabularize /(.*)<CR>
-nmap	<leader>=			:Tabularize /= <CR>
+nmap  <leader><space> :Tabularize / <CR>
+nmap  <leader>"       :Tabularize /"[^"]*"<CR>
+nmap  <leader>(       :Tabularize /(.*)<CR>
+nmap  <leader>=       :Tabularize /= <CR>
 "" }}}
