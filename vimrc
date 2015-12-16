@@ -46,6 +46,7 @@ Plugin 'arecarn/selection.vim'
 Plugin 'ashisha/image.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'godlygeek/tabular'
 "" libs
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -543,12 +544,12 @@ function! Compile_to_CSS()
   endif
   execute ":silent !".compiler." ".src." > ".target
 endfunction
-
+" commands
 autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
 command! ToggleDotMFiles call Toggle_filetype_dot_m()
 command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
-
+" function keys
 nmap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
 imap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
 nmap  <silent><F2>  :NERDTreeToggle .<CR>
@@ -567,4 +568,9 @@ nmap  <silent><F8>  :Crunch<CR>
 imap  <silent><F8>  :Crunch<CR>
 nmap  <silent><F9>  :TagbarToggle<CR>
 imap  <silent><F9>  :TagbarToggle<CR>
+" tabularize shortcut
+nmap	<leader><space>		:Tabularize / <CR>
+nmap	<leader>"			:Tabularize /"[^"]*"<CR>
+nmap	<leader>(			:Tabularize /(.*)<CR>
+nmap	<leader>=			:Tabularize /= <CR>
 "" }}}
