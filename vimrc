@@ -290,7 +290,7 @@ let g:airline_symbols.whitespace = '⇆ '
 autocmd VimEnter * silent! :GitGutterDisable
 "" }}}
 "" indent line {{{
-autocmd VimEnter * silent! :IndentLinesDisable
+let g:indentLine_enabled = 0
 """}}}
 "" syntasitc settings {{{
 autocmd VimEnter * silent! :SyntasticToggleMode
@@ -547,11 +547,12 @@ function! Compile_to_CSS()
   elseif &ft == "scss"
     let compiler = "scss"
   endif
-  execute ":silent !".compiler." ".src." > ".target
+  execute ":silent !".compiler." ".src." ".target
 endfunction
 
 " commands
-autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
+"autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
+command! Compile_to_CSS call Compile_to_CSS()
 command! ToggleDotMFiles call Toggle_filetype_dot_m()
 command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
