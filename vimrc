@@ -552,7 +552,7 @@ endfunction
 
 " commands
 "autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
-command! Compile_to_CSS call Compile_to_CSS()
+command! CompiletoCSS call Compile_to_CSS()
 command! ToggleDotMFiles call Toggle_filetype_dot_m()
 command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
