@@ -476,7 +476,7 @@ let g:startify_list_order = [
 		\ ]
 let g:startify_files_number = 3
 let g:startify_bookmarks = [
-		\{'vimrc': '  ~/.config/.vim/vimrc'},
+		\{'vimrc': '  ~/.vim/vimrc'},
 		\{'nvimrc': '  ~/.config/nvim/init.vim'}]
 let g:startify_custom_header =
 		\ map(split(system('tips.py | cowsay -f $(ls /usr/share/cowsay/cows | shuf -n 1 | cut -d. -f1)'), '\n'), '"   ". v:val') + ['']
