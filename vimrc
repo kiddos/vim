@@ -11,16 +11,18 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "" color scheme
 Plugin 'kiddos/malokai'
-"" git
+"" git {{{
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'gregsexton/gitv'
 Plugin 'sjl/gundo.vim'
-"" tmux
+"" }}}
+"" tmux {{{
 Plugin 'erikw/tmux-powerline'
 Plugin 'edkolev/tmuxline.vim'
-"" utility
+"" }}}
+"" utility {{{
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
@@ -47,9 +49,11 @@ Plugin 'ashisha/image.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'godlygeek/tabular'
-"" libs
+"" }}}
+"" libs {{{
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+"" }}}
 "" language specific
 " C family {{{
 Plugin 'octol/vim-cpp-enhanced-highlight'
