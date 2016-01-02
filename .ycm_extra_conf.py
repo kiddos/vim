@@ -103,34 +103,14 @@ flags = [
     '-I/opt/Qt5.5.0/5.5/gcc_64/include/QtZlib',
     # GNUstep libraries
     '-I/usr/include/GNUstep/',
-    '-I/usr/include/GNUstep/AppKit',
-    '-I/usr/include/GNUstep/Cocoa',
-    '-I/usr/include/GNUstep/Cynthiune',
-    '-I/usr/include/GNUstep/DBKit',
-    '-I/usr/include/GNUstep/Foundation',
-    '-I/usr/include/GNUstep/Frameworks',
-    '-I/usr/include/GNUstep/FSNode',
-    '-I/usr/include/GNUstep/GNUMail',
-    '-I/usr/include/GNUstep/gnustep',
-    '-I/usr/include/GNUstep/GNUstepBase',
-    '-I/usr/include/GNUstep/GNUstepGUI',
-    '-I/usr/include/GNUstep/GormCore',
-    '-I/usr/include/GNUstep/GormObjCHeaderParser',
-    '-I/usr/include/GNUstep/GormPrefs',
-    '-I/usr/include/GNUstep/Inspector',
-    '-I/usr/include/GNUstep/InterfaceBuilder',
-    '-I/usr/include/GNUstep/Operation',
-    '-I/usr/include/GNUstep/PreferencePanes',
-    '-I/usr/include/GNUstep/ProjectCenter',
-    '-I/usr/include/GNUstep/Renaissance',
-    '-I/usr/include/GNUstep/TalkSoupBundles',
     # standard gcc includes
     '-I/usr/lib/gcc/x86_64-linux-gnu/4.8/include',
     # X11 lib
     '-I/usr/include/X11/',
     '-std=c++11',
-    '-x',
-    'c++',
+    # current include directory
+    '-I`pwd`/include',
+    '-I`pwd`/../include'
 ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
