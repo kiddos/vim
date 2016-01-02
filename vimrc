@@ -155,7 +155,7 @@ autocmd VimEnter,BufRead,BufNewFile *.ejs set filetype=html
 autocmd VimEnter,BufRead,BufNewFile *.pro set filetype=make
 "" }}}
 "" window settings {{{
-set cmdheight=2
+set cmdheight=1
 set cmdwinheight=6
 set relativenumber
 set fillchars=stl:\ ,stlnc:-,vert:\|,fold:-,diff:-
