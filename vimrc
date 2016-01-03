@@ -105,29 +105,35 @@ Plugin 'tpope/vim-markdown'
 " }}}
 call vundle#end()
 filetype plugin indent on
+"" code display setting {{{
+set modeline
+autocmd FileType c,cpp,objc,objcpp,java,cs,asm,vhdl,ruby,eruby,python set textwidth=69
+autocmd FileType html,css,javascript,less,sass,scss,elm,matlab,r,vim set textwidth=80
+" code folding
+autocmd FileType c,cpp,objc,objcpp,java,javascript,css,php setlocal foldmarker={,}
+autocmd FileType c,cpp,objc,objcpp,java,javascript,css,php setlocal foldmethod=marker
+autocmd FileType c,cpp,objc,objcpp,java,javascript,css,php setlocal foldlevel=3
+autocmd FileType c,cpp,objc,objcpp,java,javascript,css,php normal zR
+autocmd FileType html,xhtml,xml,haml,jst,python,ruby setlocal foldmethod=indent
+autocmd FileType python,ruby setlocal foldlevel=3
+autocmd FileType html,xhtml,xml,haml,hst setlocal foldlevel=20
+autocmd FileType html,xhtml,xml,haml,jst,python,ruby normal zR
+"" general indenting
+"" }}}
 "" editing settings {{{
 set altkeymap
 set autoindent
 set backspace=indent,eol,start
 set clipboard=unnamedplus
-"set cursorcolumn
-set cursorline
 set encoding=utf-8
 set ignorecase
 set incsearch
 set linebreak
-set modeline
 set shiftround
 set nosmartindent
 set complete=.,w,b,u,U,t,k
 set completeopt=menu
 set number
-autocmd FileType c,cpp,objc,javascript,php setlocal foldmarker={,}
-autocmd FileType c,cpp,objc,xml,html,css,javascript,ruby,php,java,python set foldlevel=20
-setlocal foldmethod=marker
-autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
-autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
-"" general indenting
 set expandtab
 set tabstop=4
 set softtabstop=2
@@ -151,8 +157,6 @@ set icon
 set iconstring=vim
 set nowritebackup
 set formatoptions+=t
-autocmd FileType c,cpp,objc,objcpp,java,cs,asm,vhdl,ruby,eruby,python set textwidth=69
-autocmd FileType html,css,javascript,less,sass,scss,elm,matlab,r,vim set textwidth=80
 autocmd VimEnter,BufRead,BufNewFile *.m set filetype=matlab
 autocmd VimEnter,BufRead,BufNewFile *.h set filetype=cpp
 autocmd VimEnter,BufRead,BufNewFile *.ejs set filetype=html
@@ -165,7 +169,6 @@ set relativenumber
 set fillchars=stl:\ ,stlnc:-,vert:\|,fold:-,diff:-
 set langmenu=en_US.UTF-8
 set laststatus=2
-set modelines=30
 set pumheight=6
 set report=2
 set ruler
@@ -179,6 +182,8 @@ set title
 set warn
 """ }}}
 "" color scheme settings {{{
+"set cursorcolumn
+set cursorline
 set background=dark
 syntax enable
 syntax on
