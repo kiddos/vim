@@ -118,7 +118,9 @@ autocmd FileType html,xhtml,xml,haml,jst,python,ruby setlocal foldmethod=indent
 autocmd FileType python,ruby setlocal foldlevel=3
 autocmd FileType html,xhtml,xml,haml,hst setlocal foldlevel=20
 autocmd FileType html,xhtml,xml,haml,jst,python,ruby normal zR
-"" general indenting
+autocmd FileType vim setlocal foldmethod=marker
+autocmd FileType vim setlocal foldmarker={{{,}}}
+autocmd FileType vim setlocal foldlevel=0
 "" }}}
 "" editing settings {{{
 set altkeymap
