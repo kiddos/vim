@@ -329,7 +329,7 @@ let g:syntastic_auto_jump = 0
 "" language specific options
 " c options {{{
 let g:syntastic_c_check_header = 1
-let g:syntastic_c_compiler_options = "-std=c89 -Wall -g -O3 -fopenmp -pthread -fPIC -fmax-errors=10 -DDEBUG"
+let g:syntastic_c_compiler_options = "-std=c99 -Wall -g -O3 -fopenmp -pthread -fPIC -DDEBUG"
 let g:syntastic_c_include_dirs = [
 \   '/usr/include/ImageMagick/',
 \   '/usr/lib/gcc/x86_64-linux-gnu/4.8/include',
