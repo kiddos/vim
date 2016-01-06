@@ -49,6 +49,7 @@ Plugin 'ashisha/image.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'godlygeek/tabular'
+Plugin 'kiddos/vim-snippets'
 "" }}}
 "" libs {{{
 Plugin 'MarcWeber/vim-addon-mw-utils'
