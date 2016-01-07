@@ -434,7 +434,7 @@ let g:syntastic_objc_include_dirs = ['/usr/include/GNUstep']
 " python options {{{
 let g:syntastic_python_python_exec = '/usr/bin/python'
 let g:syntastic_python_checkers = ['flake8', 'python']
-let g:syntastic_python_flake8_args='--ignore=E501,E225,E302,E303,W391,E226,E231,E701'
+let g:syntastic_python_flake8_args='--ignore=E501,E225,E302,E303,W391,E226,E231,E701,E128'
 " }}}
 " html options {{{
 let g:syntastic_html_checkers = ['jshint']
