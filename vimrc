@@ -146,6 +146,11 @@ autocmd FileType python setlocal expandtab
 autocmd FileType python setlocal tabstop=8
 autocmd FileType python setlocal softtabstop=4
 autocmd FileType python setlocal shiftwidth=4
+" make indenting
+autocmd FileType make setlocal expandtab
+autocmd FileType make setlocal tabstop=8
+autocmd FileType make setlocal softtabstop=4
+autocmd FileType make setlocal shiftwidth=4
 " solve zsh escap delay
 set timeoutlen=1000 ttimeoutlen=0
 "" }}}
