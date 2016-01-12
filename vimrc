@@ -108,7 +108,7 @@ call vundle#end()
 filetype plugin indent on
 "" code display setting {{{
 set modeline
-autocmd FileType c,cpp,objc,objcpp,java,cs,asm,vhdl,ruby,eruby,python set textwidth=69
+autocmd FileType c,cpp,objc,objcpp,java,cs,asm,vhdl,ruby,eruby,python set textwidth=80
 autocmd FileType html,css,javascript,less,sass,scss,elm,matlab,r,vim set textwidth=80
 " code folding
 autocmd FileType c,cpp,objc,objcpp,java,javascript,css,php setlocal foldmarker={,}
