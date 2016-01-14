@@ -22,6 +22,7 @@ Plugin 'sjl/gundo.vim'
 "" tmux {{{
 Plugin 'erikw/tmux-powerline'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 "" }}}
 "" utility {{{
 Plugin 'scrooloose/nerdtree'
@@ -231,10 +232,10 @@ noremap		K	k
 noremap		J	j
 noremap		H	h
 "" moving between splits
-nnoremap  <C-H>	<C-W><C-H>
-nnoremap  <C-J>	<C-W><C-J>
-nnoremap  <C-K>	<C-W><C-K>
-nnoremap  <C-L>	<C-W><C-L>
+"nnoremap  <C-H>	<C-W><C-H>
+"nnoremap  <C-J>	<C-W><C-J>
+"nnoremap  <C-K>	<C-W><C-K>
+"nnoremap  <C-L>	<C-W><C-L>
 "" large movement
 nmap	J	<C-D>
 nmap	K	<C-U>
