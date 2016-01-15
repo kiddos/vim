@@ -63,6 +63,7 @@ Plugin 'OrangeT/vim-csharp'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kiddos/a.vim'
 Plugin 'b4winckler/vim-objc'
+Plugin 'jeaye/color_coded'
 "}}}
 " Java {{{
 Plugin 'krisajenkins/vim-java-sql'
