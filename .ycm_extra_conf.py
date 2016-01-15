@@ -103,6 +103,7 @@ flags = [
     '-I/opt/Qt5.5.0/5.5/gcc_64/include/QtZlib',
     # GNUstep libraries
     '-I/usr/include/GNUstep/',
+    '-I/usr/local/include/GNUstep/',
     # standard gcc includes
     '-I/usr/lib/gcc/x86_64-linux-gnu/4.8/include',
     # X11 lib
