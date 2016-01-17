@@ -343,7 +343,7 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_c_compiler_options = "-std=c99 -Wall -O3 -fopenmp -pthread -fPIC -DDEBUG"
 let g:syntastic_c_include_dirs = [
 \   '/usr/lib/gcc/x86_64-linux-gnu/4.8/include',
-\   '/usr/src/linux-headers-4.2.8/include'
+\   '/usr/src/linux-headers-4.2.8/include',
 \	'.',
 \	'..',
 \	'./include',
