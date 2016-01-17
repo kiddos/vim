@@ -148,10 +148,10 @@ autocmd FileType python setlocal tabstop=8
 autocmd FileType python setlocal softtabstop=4
 autocmd FileType python setlocal shiftwidth=4
 " make indenting
-autocmd FileType make setlocal expandtab
-autocmd FileType make setlocal tabstop=8
-autocmd FileType make setlocal softtabstop=4
-autocmd FileType make setlocal shiftwidth=4
+autocmd FileType make setlocal noexpandtab
+autocmd FileType make setlocal tabstop=4
+autocmd FileType make setlocal softtabstop=2
+autocmd FileType make setlocal shiftwidth=2
 " snippet indenting
 autocmd FileType snippet setlocal noexpandtab
 autocmd FileType snippet setlocal tabstop=8
