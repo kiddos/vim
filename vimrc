@@ -62,8 +62,6 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'OrangeT/vim-csharp'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kiddos/a.vim'
-Plugin 'b4winckler/vim-objc'
-Plugin 'jeaye/color_coded'
 "}}}
 " Java {{{
 Plugin 'krisajenkins/vim-java-sql'
@@ -154,8 +152,13 @@ autocmd FileType make setlocal expandtab
 autocmd FileType make setlocal tabstop=8
 autocmd FileType make setlocal softtabstop=4
 autocmd FileType make setlocal shiftwidth=4
+" snippet indenting
+autocmd FileType snippet setlocal noexpandtab
+autocmd FileType snippet setlocal tabstop=8
+autocmd FileType snippet setlocal softtabstop=4
+autocmd FileType snippet setlocal shiftwidth=4
 " solve zsh escap delay
-set timeoutlen=1000 ttimeoutlen=0
+set timeoutlen=60 ttimeoutlen=0
 "" }}}
 "" buffer settings {{{
 set autoread
@@ -608,23 +611,23 @@ command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 " function keys
 nmap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
-imap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
+imap  <Esc><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
 nmap  <silent><F2>  :NERDTreeToggle .<CR>
-imap  <silent><F2>  :NERDTreeToggle .<CR>
+imap  <Esc><F2>  :NERDTreeToggle .<CR>
 nmap  <silent><F3>  :GitGutterToggle<CR>
-imap  <silent><F3>  :GitGutterToggle<CR>
+imap  <Esc><F3>  :GitGutterToggle<CR>
 nmap  <silent><F4>  :IndentLinesToggle<CR>
-imap  <silent><F4>  :IndentLinesToggle<CR>
+imap  <Esc><F4>  :IndentLinesToggle<CR>
 nmap  <silent><F5>  :call Test_webpage()<CR>
-imap  <silent><F5>  :call Test_webpage()<CR>
+imap  <Esc><F5>  :call Test_webpage()<CR>
 nmap  <silent><F6>  :call Toggle_ft_m()<CR><CR>
-nmap  <silent><F6>  :call Toggle_ft_m()<CR><CR>
+imap  <Esc><F6>  :call Toggle_ft_m()<CR><CR>
 nmap  <silent><F7>  :setlocal spell!<CR>
-imap  <silent><F7>  :setlocal spell!<CR>
-nmap  <silent><F8>  :Crunch<CR>
-imap  <silent><F8>  :Crunch<CR>
+imap  <Esc><F7>  :setlocal spell!<CR>
+nmap  <silent><F8>  :setlocal ft=objc<CR>
+imap  <Esc><F8>  :setlocal ft=objc<CR>
 nmap  <silent><F9>  :TagbarToggle<CR>
-imap  <silent><F9>  :TagbarToggle<CR>
+imap  <Esc><F9>  :TagbarToggle<CR>
 " tabularize shortcut
 nmap  <leader><space> :Tabularize / <CR>
 nmap  <leader>"       :Tabularize /"[^"]*"<CR>
