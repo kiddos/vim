@@ -567,7 +567,7 @@ function! Test_webpage()
   elseif &ft == "html"
     let this_file = expand('%:p')
     echom "html file type"
-    execute ":silent ! google-chrome " . this_file
+    execute ":silent ! google-chrome \"" . this_file . "\""
     execute ":pclose!"
     execute ":redraw!"
   endif
@@ -602,6 +602,7 @@ function! Compile_to_CSS()
     let compiler = "scss"
   endif
   execute ":silent !".compiler." ".src." ".target
+  execute ":redraw!"
 endfunction
 
 " commands
