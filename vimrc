@@ -612,27 +612,28 @@ command! ToggleDotMFiles call Toggle_filetype_dot_m()
 command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 " function keys
-nmap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
-imap  <F1>  <Esc>:set columns=999<CR>:set lines=66<CR>:redraw<CR>
-nmap  <silent><F2>  :NERDTreeToggle .<CR>
-imap  <F2>  <Esc>:NERDTreeToggle .<CR>
-nmap  <silent><F3>  :GitGutterToggle<CR>
-imap  <F3>  <Esc>:GitGutterToggle<CR>
-nmap  <silent><F4>  :IndentLinesToggle<CR>
-imap  <F4>  <Esc>:IndentLinesToggle<CR>
-nmap  <silent><F5>  :call Test_webpage()<CR>
-imap  <F5>  <Esc>:call Test_webpage()<CR>
-nmap  <silent><F6>  :call Toggle_ft_m()<CR><CR>
-imap  <F6>  <Esc>:call Toggle_ft_m()<CR><CR>
-nmap  <silent><F7>  :setlocal spell!<CR>
-imap  <F7>  <Esc>:setlocal spell!<CR>
-nmap  <silent><F8>  :setlocal ft=objc<CR>
-imap  <F8>  <Esc>:setlocal ft=objc<CR>
-nmap  <silent><F9>  :TagbarToggle<CR>
-imap  <F9>  <Esc>:TagbarToggle<CR>
+nmap  <silent><F1>  :NERDTreeToggle .<CR>
+imap  <F1>  <Esc>:NERDTreeToggle .<CR>
+nmap  <silent><F2>  :GitGutterToggle<CR>
+imap  <F2>  <Esc>:GitGutterToggle<CR>
+nmap  <silent><F3>  :IndentLinesToggle<CR>
+imap  <F3>  <Esc>:IndentLinesToggle<CR>
+nmap  <silent><F4>  :call Test_webpage()<CR>
+imap  <F4>  <Esc>:call Test_webpage()<CR>
+nmap  <silent><F5>  :call Toggle_ft_m()<CR><CR>
+imap  <F5>  <Esc>:call Toggle_ft_m()<CR><CR>
+nmap  <silent><F6>  :setlocal spell!<CR>
+imap  <F6>  <Esc>:setlocal spell!<CR>
+nmap  <silent><F7>  :setlocal ft=objc<CR>
+imap  <F7>  <Esc>:setlocal ft=objc<CR>
+nmap  <silent><F8>  :TagbarToggle<CR>
+imap  <F8>  <Esc>:TagbarToggle<CR>
 " tabularize shortcut
 nmap  <leader><space> :Tabularize / <CR>
 nmap  <leader>"       :Tabularize /"[^"]*"<CR>
 nmap  <leader>(       :Tabularize /(.*)<CR>
 nmap  <leader>=       :Tabularize /= <CR>
+" a.vim shortcut
+nmap  <leader>a :A<CR>
+nmap  <leader>s :AV<CR>
 "" }}}
