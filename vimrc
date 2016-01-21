@@ -88,6 +88,7 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'mattn/emmet-vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'briancollins/vim-jst'
+Plugin 'evidens/vim-twig'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nono/jquery.vim'
 Plugin 'ap/vim-css-color'
@@ -158,7 +159,7 @@ autocmd FileType snippet setlocal tabstop=8
 autocmd FileType snippet setlocal softtabstop=4
 autocmd FileType snippet setlocal shiftwidth=4
 " solve zsh escap delay
-set timeoutlen=60 ttimeoutlen=0
+set timeoutlen=1000 ttimeoutlen=0
 "" }}}
 "" buffer settings {{{
 set autoread
@@ -613,23 +614,23 @@ command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
 command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 " function keys
 nmap  <silent><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
-imap  <Esc><F1>  :set columns=999<CR>:set lines=66<CR>:redraw<CR>
+imap  <F1>  <Esc>:set columns=999<CR>:set lines=66<CR>:redraw<CR>
 nmap  <silent><F2>  :NERDTreeToggle .<CR>
-imap  <Esc><F2>  :NERDTreeToggle .<CR>
+imap  <F2>  <Esc>:NERDTreeToggle .<CR>
 nmap  <silent><F3>  :GitGutterToggle<CR>
-imap  <Esc><F3>  :GitGutterToggle<CR>
+imap  <F3>  <Esc>:GitGutterToggle<CR>
 nmap  <silent><F4>  :IndentLinesToggle<CR>
-imap  <Esc><F4>  :IndentLinesToggle<CR>
+imap  <F4>  <Esc>:IndentLinesToggle<CR>
 nmap  <silent><F5>  :call Test_webpage()<CR>
-imap  <Esc><F5>  :call Test_webpage()<CR>
+imap  <F5>  <Esc>:call Test_webpage()<CR>
 nmap  <silent><F6>  :call Toggle_ft_m()<CR><CR>
-imap  <Esc><F6>  :call Toggle_ft_m()<CR><CR>
+imap  <F6>  <Esc>:call Toggle_ft_m()<CR><CR>
 nmap  <silent><F7>  :setlocal spell!<CR>
-imap  <Esc><F7>  :setlocal spell!<CR>
+imap  <F7>  <Esc>:setlocal spell!<CR>
 nmap  <silent><F8>  :setlocal ft=objc<CR>
-imap  <Esc><F8>  :setlocal ft=objc<CR>
+imap  <F8>  <Esc>:setlocal ft=objc<CR>
 nmap  <silent><F9>  :TagbarToggle<CR>
-imap  <Esc><F9>  :TagbarToggle<CR>
+imap  <F9>  <Esc>:TagbarToggle<CR>
 " tabularize shortcut
 nmap  <leader><space> :Tabularize / <CR>
 nmap  <leader>"       :Tabularize /"[^"]*"<CR>
