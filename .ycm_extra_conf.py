@@ -38,10 +38,6 @@ flags = [
     '-Wall',
     '-Wextra',
     '-Werror',
-    '-Wc++98-compat',
-    '-Wno-long-long',
-    '-Wno-variadic-macros',
-    '-fexceptions',
     '-fopenmp'
     # QT libraries
     '-I/usr/include/ImageMagick/',
@@ -113,7 +109,7 @@ flags = [
     '-I`pwd`/include',
     '-I`pwd`/../include',
     # linux kernel header
-    '-I/usr/src/linux-headers-4.2.8/include'
+    # '-I/usr/src/linux-headers-4.2.8/include'
 ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
