@@ -62,6 +62,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'OrangeT/vim-csharp'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kiddos/a.vim'
+Plugin 'jplaut/vim-arduino-ino'
 "}}}
 " Java {{{
 Plugin 'krisajenkins/vim-java-sql'
