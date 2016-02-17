@@ -38,7 +38,7 @@ flags = [
     '-Wall',
     '-Wextra',
     '-Werror',
-    '-fopenmp'
+    '-fopenmp',
     # QT libraries
     '-I/usr/include/ImageMagick/',
     '-I/opt/Qt5.5.0/5.5/gcc_64/include/',
