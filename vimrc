@@ -63,6 +63,8 @@ Plugin 'OrangeT/vim-csharp'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kiddos/a.vim'
 Plugin 'jplaut/vim-arduino-ino'
+Plugin 'beyondmarc/opengl.vim'
+Plugin 'tikhomirov/vim-glsl'
 "}}}
 " Java {{{
 Plugin 'krisajenkins/vim-java-sql'
