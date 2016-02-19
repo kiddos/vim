@@ -34,8 +34,9 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-dispatch'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'bling/vim-airline'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Raimondi/delimitMate'
 Plugin 'majutsushi/tagbar'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'mhinz/vim-startify'
@@ -51,6 +52,7 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'godlygeek/tabular'
 Plugin 'kiddos/vim-snippets'
+Plugin 'easymotion/vim-easymotion'
 "" }}}
 "" libs {{{
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -296,11 +298,11 @@ let g:airline_detect_paste = 1
 let g:airline_detect_crypt = 1
 let g:airline_detect_iminsert = 1
 let g:airline_inactive_collapse = 1
-let g:airline_theme = 'dark'
+let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 let g:airline_left_sep = '⊳'
 let g:airline_right_sep = '⊲ '
@@ -522,21 +524,21 @@ let g:ycm_semantic_triggers =  {
 " }}}
 "" startify settings {{{
 let g:startify_list_order = [
-		\ ['   My most recently used files in the current directory:'],
-		\ 'dir',
-		\ ['   My most recently used files:'],
-		\ 'files',
-		\ ['   Bookmarks:'],
-		\ 'bookmarks',
-		\ ['   Sessions:'],
-		\ 'sessions',
-		\ ]
+      \ ['   My most recently used files in the current directory:'],
+      \ 'dir',
+      \ ['   My most recently used files:'],
+      \ 'files',
+      \ ['   Bookmarks:'],
+      \ 'bookmarks',
+      \ ['   Sessions:'],
+      \ 'sessions',
+      \ ]
 let g:startify_files_number = 3
 let g:startify_bookmarks = [
-		\{'vimrc': '  ~/.vim/vimrc'},
-		\{'nvimrc': '  ~/.config/nvim/init.vim'}]
+      \{'vimrc': '  ~/.vim/vimrc'},
+      \{'nvimrc': '  ~/.config/nvim/init.vim'}]
 let g:startify_custom_header =
-		\ map(split(system('tips.py | cowsay -f $(ls /usr/share/cowsay/cows | shuf -n 1 | cut -d. -f1)'), '\n'), '"   ". v:val') + ['']
+      \ map(split(system('tips.py | cowsay -f $(ls /usr/share/cowsay/cows | shuf -n 1 | cut -d. -f1)'), '\n'), '"   ". v:val') + ['']
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 let g:startify_enable_special = 0
