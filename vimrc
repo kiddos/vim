@@ -135,6 +135,7 @@ set altkeymap
 set autoindent
 set backspace=indent,eol,start
 set clipboard=unnamedplus
+set cindent
 set encoding=utf-8
 set ignorecase
 set incsearch
@@ -148,6 +149,7 @@ set expandtab
 set tabstop=4
 set softtabstop=2
 set shiftwidth=2
+set nosmartindent
 " python indenting
 autocmd FileType python setlocal expandtab
 autocmd FileType python setlocal tabstop=8
