@@ -17,7 +17,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'gregsexton/gitv'
-Plugin 'sjl/gundo.vim'
 "" }}}
 "" tmux {{{
 Plugin 'erikw/tmux-powerline'
@@ -33,6 +32,7 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -53,6 +53,9 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'godlygeek/tabular'
 Plugin 'kiddos/vim-snippets'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'sjl/gundo.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'terryma/vim-multiple-cursors'
 "" }}}
 "" libs {{{
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -524,6 +527,9 @@ let g:ycm_semantic_triggers =  {
 \	'r' : ['$']
 \ }
 " }}}
+"" Arduino setttings {{{
+let g:vim_arduino_map_keys = 0
+" }}}
 "" startify settings {{{
 let g:startify_list_order = [
       \ ['   My most recently used files in the current directory:'],
@@ -642,5 +648,5 @@ nmap  <leader>(       :Tabularize /(.*)<CR>
 nmap  <leader>=       :Tabularize /= <CR>
 " a.vim shortcut
 nmap  <leader>a :A<CR>
-nmap  <leader>s :AV<CR>
+nmap  <leader>av :AV<CR>
 "" }}}
