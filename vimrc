@@ -29,10 +29,10 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -303,7 +303,7 @@ let g:airline_detect_paste = 1
 let g:airline_detect_crypt = 1
 let g:airline_detect_iminsert = 1
 let g:airline_inactive_collapse = 1
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'murmur'
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
