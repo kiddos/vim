@@ -648,5 +648,5 @@ nmap  <leader>(       :Tabularize /(.*)<CR>
 nmap  <leader>=       :Tabularize /= <CR>
 " a.vim shortcut
 nmap  <leader>a :A<CR>
-nmap  <leader>av :AV<CR>
+nmap  <leader>s :AV<CR>
 "" }}}
