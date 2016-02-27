@@ -144,7 +144,6 @@ set ignorecase
 set incsearch
 set linebreak
 set shiftround
-set nosmartindent
 set complete=.,w,b,u,U,t,k
 set completeopt=menu
 set number
@@ -152,7 +151,7 @@ set expandtab
 set tabstop=4
 set softtabstop=2
 set shiftwidth=2
-set nosmartindent
+set smartindent
 " python indenting
 autocmd FileType python setlocal expandtab
 autocmd FileType python setlocal tabstop=8
