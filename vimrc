@@ -22,6 +22,7 @@ Plugin 'gregsexton/gitv'
 Plugin 'erikw/tmux-powerline'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'benmills/vimux'
 "" }}}
 "" utility {{{
 Plugin 'scrooloose/nerdtree'
