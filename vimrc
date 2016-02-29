@@ -268,10 +268,9 @@ nmap	<leader>7	7gt
 nmap	<leader>8	8gt
 nmap	<leader>9	9gt
 " split/close tab
-nmap	<leader><Tab>		:tabedit<CR>
-nmap	<leader>v			:vs<CR>
-nmap	<leader>q			:q<CR>
-nmap	<leader>Q			:q<CR>
+nmap <leader>q :q<CR>
+nmap <leader>Q :q<CR>
+nmap <leader>v :vsplit<CR>
 "" jump window
 inoremap	<C-]>	<Esc><C-W><C-]>
 nnoremap	<C-]>	<C-W><C-]>
@@ -618,6 +617,24 @@ function! Compile_to_CSS()
   execute ":redraw!"
 endfunction
 
+" tmux compile opengl c++ program
+function! Compile_OpenGL()
+endfunction
+
+function! Split_Vimux()
+  let g:VimuxOrientation="h"
+  let g:VimuxHeight="50"
+  call VimuxOpenRunner()
+  let g:VimuxOrientation="v"
+  let g:VimuxHeight="20"
+endfunction
+
+function! New_Tab_Vimux()
+  let g:VimuxRunnerType="window"
+  call VimuxOpenRunner()
+  let g:VimuxRunnerType="pane"
+endfunction
+
 " commands
 "autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
 command! CompiletoCSS call Compile_to_CSS()
@@ -649,4 +666,5 @@ nmap  <leader>=       :Tabularize /= <CR>
 " a.vim shortcut
 nmap  <leader>a :A<CR>
 nmap  <leader>s :AV<CR>
+nmap  <leader>b :call Split_Vimux()<CR>
 "" }}}
