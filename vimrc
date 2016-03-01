@@ -233,47 +233,43 @@ autocmd FileType javascript setlocal omnifunc=tern#Complete
 let mapleader=","
 let localleader="\\"
 " copy, cut, paste, save
-inoremap	<C-C>	<Esc>yy
-inoremap	<C-X>	<Esc>cc
-inoremap	<C-V>	<Esc>pa
+inoremap  <C-C>	<Esc>yy
+inoremap  <C-X>	<Esc>cc
+inoremap  <C-V>	<Esc>pa
 "" typo
-command!	WQ	wq
-command!	Wq	wq
-command!	W	w
-command!	Q	q
-command!	Qa	qa
-command!	QA	qa
-noremap		L	l
-noremap		K	k
-noremap		J	j
-noremap		H	h
+command!  WQ  wq
+command!  Wq  wq
+command!  W w
+command!  Q q
+command!  Qa  qa
+command!  QA  qa
 "" moving between splits
 "nnoremap  <C-H>	<C-W><C-H>
 "nnoremap  <C-J>	<C-W><C-J>
 "nnoremap  <C-K>	<C-W><C-K>
 "nnoremap  <C-L>	<C-W><C-L>
 "" large movement
-nmap	J	<C-D>
-nmap	K	<C-U>
-nmap	H	<C-E>
-nmap	L	<C-Y>
+nmap J  <C-D>
+nmap K  <C-U>
+nmap H  <C-E>
+nmap L  <C-Y>
 "" Tab switching
-nmap	<leader>1	1gt
-nmap	<leader>2	2gt
-nmap	<leader>3	3gt
-nmap	<leader>4	4gt
-nmap	<leader>5	5gt
-nmap	<leader>6	6gt
-nmap	<leader>7	7gt
-nmap	<leader>8	8gt
-nmap	<leader>9	9gt
+nmap  <leader>1	1gt
+nmap  <leader>2	2gt
+nmap  <leader>3	3gt
+nmap  <leader>4	4gt
+nmap  <leader>5	5gt
+nmap  <leader>6	6gt
+nmap  <leader>7	7gt
+nmap  <leader>8	8gt
+nmap  <leader>9	9gt
 " split/close tab
 nmap <leader>q :q<CR>
 nmap <leader>Q :q<CR>
 nmap <leader>v :vsplit<CR>
 "" jump window
-inoremap	<C-]>	<Esc><C-W><C-]>
-nnoremap	<C-]>	<C-W><C-]>
+inoremap  <C-]>	<Esc><C-W><C-]>
+nnoremap  <C-]>	<C-W><C-]>
 "" Omni Complete
 inoremap <expr>	<CR>		pumvisible() ? "\<C-N><C-Y>" : "\<CR>"
 inoremap <expr>	<Down>		pumvisible() ? "\<C-N>" : "\<Down>"
@@ -285,15 +281,15 @@ inoremap <expr> <PageUp>	pumvisible() ? "\<PageUp>\<C-P>\<C-N>" : "\<PageUp>"
 inoremap <C-D>	<C-X><C-O><C-N>
 inoremap <C-F>  <C-R><Tab><C-P>
 "" end line semicolon ;
-autocmd		FileType	c		nnoremap ; $a;
-autocmd		FileType	cpp		nnoremap ; $a;
-autocmd		FileType	objc	nnoremap ; $a;
-autocmd		FileType	java	nnoremap ; $a;
-autocmd		FileType	matlab	nnoremap ; $a;
-autocmd		FileType	php		nnoremap ; $a;
-autocmd		FileType	html	nnoremap ; $a;
-autocmd		FileType	css		nnoremap ; $a;
-autocmd		FileType	javascript nnoremap ; $a;
+autocmd	FileType  c	          nnoremap ; $a;
+autocmd FileType  cpp         nnoremap ; $a;
+autocmd	FileType  objc        nnoremap ; $a;
+autocmd	FileType  java        nnoremap ; $a;
+autocmd	FileType  matlab      nnoremap ; $a;
+autocmd	FileType  php         nnoremap ; $a;
+autocmd	FileType  html        nnoremap ; $a;
+autocmd	FileType  css         nnoremap ; $a;
+autocmd	FileType  javascript  nnoremap ; $a;
 "" }}}
 "" Plugin settings
 "" airline settings {{{
@@ -618,7 +614,15 @@ function! Compile_to_CSS()
 endfunction
 
 " tmux compile opengl c++ program
-function! Compile_OpenGL()
+function! Compile_OpenGL_GLFW3()
+  let target = expand("%:r")
+  let src = expand("%")
+  let flags = " -g "
+  let standardlibs = "-lm -lpthread -ldl "
+  let gllibs = "-lglfw3 -lGLEW -lGL "
+  let X11libs = "-lX11 -lXrandr -lXinerama -lXi -lXxf86vm -lXcursor "
+  let libs = gllibs . X11libs . standardlibs
+  call VimuxRunCommand("clear; g++ -o " . target . " " . src . flags . libs)
 endfunction
 
 function! Split_Vimux()
@@ -627,12 +631,6 @@ function! Split_Vimux()
   call VimuxOpenRunner()
   let g:VimuxOrientation="v"
   let g:VimuxHeight="20"
-endfunction
-
-function! New_Tab_Vimux()
-  let g:VimuxRunnerType="window"
-  call VimuxOpenRunner()
-  let g:VimuxRunnerType="pane"
 endfunction
 
 " commands
@@ -648,16 +646,17 @@ nmap  <silent><F2>  :GitGutterToggle<CR>
 imap  <F2>  <Esc>:GitGutterToggle<CR>
 nmap  <silent><F3>  :IndentLinesToggle<CR>
 imap  <F3>  <Esc>:IndentLinesToggle<CR>
-nmap  <silent><F4>  :call Test_webpage()<CR>
-imap  <F4>  <Esc>:call Test_webpage()<CR>
-nmap  <silent><F5>  :call Toggle_ft_m()<CR><CR>
-imap  <F5>  <Esc>:call Toggle_ft_m()<CR><CR>
+nmap  <silent><F4>  :call Toggle_ft_m()<CR><CR>
+imap  <F4>  <Esc>:call Toggle_ft_m()<CR><CR>
+nmap  <silent><F5>  :call Test_webpage()<CR>
+imap  <F5>  <Esc>:call Test_webpage()<CR>
 nmap  <silent><F6>  :setlocal spell!<CR>
 imap  <F6>  <Esc>:setlocal spell!<CR>
 nmap  <silent><F7>  :setlocal ft=objc<CR>
 imap  <F7>  <Esc>:setlocal ft=objc<CR>
 nmap  <silent><F8>  :TagbarToggle<CR>
 imap  <F8>  <Esc>:TagbarToggle<CR>
+nmap  <F10> :call Compile_OpenGL_GLFW3()<CR>
 " tabularize shortcut
 nmap  <leader><space> :Tabularize / <CR>
 nmap  <leader>"       :Tabularize /"[^"]*"<CR>
