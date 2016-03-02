@@ -555,7 +555,7 @@ function! Toggle_filetype_dot_m()
   endif
 endfunction
 
-function! Test_webpage()
+function! Test_Webpage()
   if &ft == "php"
     echom "php file type"
     let dst = expand('%:t') . ".html"
@@ -613,8 +613,26 @@ function! Compile_to_CSS()
   execute ":redraw!"
 endfunction
 
-" tmux compile opengl c++ program
-function! Compile_OpenGL_GLFW3()
+" tmux compile types of c++ program
+function! Compile_CXX_Basic()
+  let compiler = "gcc "
+  if &ft == "cpp"
+    let compiler = "g++ "
+  endif
+  let target = expand("%:r")
+  let src = expand("%")
+  let flags = " -g -DDEBUG "
+  let standardlibs = "-lm "
+  let libs = standardlibs
+  call VimuxRunCommand("clear;echo \"compiling " . src . " ...\"")
+  call VimuxRunCommand(compiler. "-o " . target . " " . src . flags . libs)
+endfunction
+
+function! Compile_CXX_OpenGL_GLFW3()
+  let compiler = "gcc "
+  if &ft == "cpp"
+    let compiler = "g++ "
+  endif
   let target = expand("%:r")
   let src = expand("%")
   let flags = " -g "
@@ -622,7 +640,36 @@ function! Compile_OpenGL_GLFW3()
   let gllibs = "-lglfw3 -lGLEW -lGL "
   let X11libs = "-lX11 -lXrandr -lXinerama -lXi -lXxf86vm -lXcursor "
   let libs = gllibs . X11libs . standardlibs
-  call VimuxRunCommand("clear; g++ -o " . target . " " . src . flags . libs)
+  call VimuxRunCommand("clear;echo \"compiling " . src . " ...\"")
+  call VimuxRunCommand(compiler. "-o " . target . " " . src . flags . libs)
+endfunction
+
+function! Compile_CXX_ALLEGRO5()
+  let compiler = "gcc "
+  if &ft == "cpp"
+    let compiler = "g++ "
+  endif
+  let target = expand("%:r")
+  let src = expand("%")
+  let flags = " -g "
+  let standardlibs = "-lm "
+  let al_core_libs = "-lallegro -lallegro_primitives -lallegro_dialog "
+  let al_image_lib = "-lallegro_image "
+  let al_font_lib = "-lallegro_font -lallegro_ttf "
+  let al_audio_lib = "-lallegro_audio -lallegro_acodec "
+  let libs = standardlibs . al_core_libs . al_image_lib . al_font_lib . al_audio_lib
+  call VimuxRunCommand("clear;echo \"compiling " . src . " ...\"")
+  call VimuxRunCommand(compiler. "-o " . target . " " . src . flags . libs)
+endfunction
+
+function! Quick_Compile()
+  if &ft == "c" || &ft == "cpp"
+    call Compile_CXX_Basic()
+  elseif &ft == "less" || &ft == "scss" || &ft == "sass"
+    call Compile_to_CSS()
+  elseif &ft == "php" || &ft == "html"
+    call Test_webpage()
+  endif
 endfunction
 
 function! Split_Vimux()
@@ -635,9 +682,11 @@ endfunction
 
 " commands
 "autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
-command! CompiletoCSS call Compile_to_CSS()
-command! ToggleDotMFiles call Toggle_filetype_dot_m()
-command! -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
+command! CompiletoCSS     call Compile_to_CSS()
+command! ToggleDotMFiles  call Toggle_filetype_dot_m()
+command! OpenglGLFW3      call Compile_CPP_OpenGL_GLFW3()
+command! ALLEGRO5         call Compile_CPP_ALLEGRO5()
+command! -bar -nargs=?          ShowSpaces call ShowSpaces(<args>)
 command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 " function keys
 nmap  <silent><F1>  :NERDTreeToggle .<CR>
@@ -648,7 +697,7 @@ nmap  <silent><F3>  :IndentLinesToggle<CR>
 imap  <F3>  <Esc>:IndentLinesToggle<CR>
 nmap  <silent><F4>  :call Toggle_ft_m()<CR><CR>
 imap  <F4>  <Esc>:call Toggle_ft_m()<CR><CR>
-nmap  <silent><F5>  :call Test_webpage()<CR>
+nmap  <silent><F5>  :call Quick_Compile()<CR>
 imap  <F5>  <Esc>:call Test_webpage()<CR>
 nmap  <silent><F6>  :setlocal spell!<CR>
 imap  <F6>  <Esc>:setlocal spell!<CR>
@@ -656,7 +705,6 @@ nmap  <silent><F7>  :setlocal ft=objc<CR>
 imap  <F7>  <Esc>:setlocal ft=objc<CR>
 nmap  <silent><F8>  :TagbarToggle<CR>
 imap  <F8>  <Esc>:TagbarToggle<CR>
-nmap  <F10> :call Compile_OpenGL_GLFW3()<CR>
 " tabularize shortcut
 nmap  <leader><space> :Tabularize / <CR>
 nmap  <leader>"       :Tabularize /"[^"]*"<CR>
