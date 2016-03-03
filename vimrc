@@ -598,6 +598,10 @@ function! TrimSpaces() range
   let &hlsearch=oldhlsearch
 endfunction
 
+function! Compile_to_HTML()
+  execute ":JadeWatch html vert"
+endfunction
+
 function! Compile_to_CSS()
   let src = expand("%:t")
   let target = expand("%:r") . ".css"
@@ -669,6 +673,8 @@ function! Quick_Compile()
     call Compile_to_CSS()
   elseif &ft == "php" || &ft == "html"
     call Test_Webpage()
+  elseif &ft == "jade"
+    call Compile_to_HTML()
   endif
 endfunction
 
