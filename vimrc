@@ -668,7 +668,7 @@ function! Quick_Compile()
   elseif &ft == "less" || &ft == "scss" || &ft == "sass"
     call Compile_to_CSS()
   elseif &ft == "php" || &ft == "html"
-    call Test_webpage()
+    call Test_Webpage()
   endif
 endfunction
 
