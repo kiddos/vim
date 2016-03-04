@@ -218,6 +218,7 @@ colorscheme malokai
 "" omni completeion {{{
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 autocmd FileType cpp setlocal omnifunc=ccomplete#Complete
+autocmd FileType arduino setlocal omnifunc=ccomplete#Complete
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType python setlocal omnifunc=python3complete#Complete
@@ -675,6 +676,8 @@ function! Quick_Compile()
     call Test_Webpage()
   elseif &ft == "jade"
     call Compile_to_HTML()
+  elseif &ft == "arduino"
+    call ArduinoCompile()
   endif
 endfunction
 
@@ -704,13 +707,19 @@ imap  <F3>  <Esc>:IndentLinesToggle<CR>
 nmap  <silent><F4>  :call Toggle_ft_m()<CR><CR>
 imap  <F4>  <Esc>:call Toggle_ft_m()<CR><CR>
 nmap  <silent><F5>  :call Quick_Compile()<CR>
-imap  <F5>  <Esc>:call Test_webpage()<CR>
+imap  <F5>  <Esc>:call Quick_Compile()<CR>
 nmap  <silent><F6>  :setlocal spell!<CR>
 imap  <F6>  <Esc>:setlocal spell!<CR>
-nmap  <silent><F7>  :setlocal ft=objc<CR>
-imap  <F7>  <Esc>:setlocal ft=objc<CR>
-nmap  <silent><F8>  :TagbarToggle<CR>
-imap  <F8>  <Esc>:TagbarToggle<CR>
+nmap  <silent><F7>  :TagbarToggle<CR>
+imap  <F7>  <Esc>:TagbarToggle<CR>
+" arduino mappings
+nmap  <silent><F8>  :call ArduinoSerialMonitor()<CR>
+imap  <F8>  <Esc>:call ArduinoSerialMonitor()<CR>
+nmap  <silent><F9>  :call ArduinoDeploy()<CR>
+imap  <F9>  <Esc>:call ArduinoDeploy()<CR>
+" toggle .m file type (objc or matlab)
+nmap  <silent><F10>  :call Toggle_filetype_dot_m()<CR>
+imap  <F10>  <Esc>:call Toggle_filetype_dot_m()<CR>
 " tabularize shortcut
 nmap  <leader><space> :Tabularize / <CR>
 nmap  <leader>"       :Tabularize /"[^"]*"<CR>
