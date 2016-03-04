@@ -110,6 +110,12 @@ flags = [
     '-I`pwd`/../include',
     # linux kernel header
     # '-I/usr/src/linux-headers-4.2.8/include'
+    # Arduino headers
+    '-I/usr/local/share/arduino/hardware/arduino/cores/arduino/',
+    '-I/usr/local/share/arduino/libraries/makeblock',
+    '-I/usr/local/share/arduino/libraries/Wire',
+    '-I/usr/local/share/arduino/libraries/Stepper',
+    '-I/usr/local/share/arduino/libraries/Ethernet',
 ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
