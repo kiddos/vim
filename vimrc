@@ -119,7 +119,6 @@ call vundle#end()
 filetype plugin indent on
 "" code display setting {{{
 set modeline
-autocmd FileType arduino setlocal filetype=cpp
 autocmd FileType c,cpp,objc,objcpp,java,cs,asm,vhdl,ruby,eruby,python set textwidth=80
 autocmd FileType html,css,javascript,less,sass,scss,elm,matlab,r,vim set textwidth=80
 " code folding
@@ -219,7 +218,6 @@ colorscheme malokai
 "" omni completeion {{{
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 autocmd FileType cpp setlocal omnifunc=ccomplete#Complete
-autocmd FileType arduino setlocal omnifunc=ccomplete#Complete
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType python setlocal omnifunc=python3complete#Complete
