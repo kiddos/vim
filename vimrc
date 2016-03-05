@@ -689,13 +689,18 @@ function! Split_Vimux()
 endfunction
 
 " commands
+command! -bar -nargs=?          ShowSpaces call ShowSpaces(<args>)
+command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
 "autocmd BufWritePost *.less,*.sass,*.scss call Compile_to_CSS()
 command! CompiletoCSS     call Compile_to_CSS()
 command! ToggleDotMFiles  call Toggle_filetype_dot_m()
 command! OpenglGLFW3      call Compile_CPP_OpenGL_GLFW3()
 command! ALLEGRO5         call Compile_CPP_ALLEGRO5()
-command! -bar -nargs=?          ShowSpaces call ShowSpaces(<args>)
-command! -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
+" arduino commands
+command! ArduinoCompile       call ArduinoCompile()
+command! ArduinoDeploy        call ArduinoDeploy()
+command! ArduinoSerialMonitor call ArduinoSerialMonitor()
+
 " function keys
 nmap  <silent><F1>  :NERDTreeToggle .<CR>
 imap  <F1>  <Esc>:NERDTreeToggle .<CR>
