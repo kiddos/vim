@@ -48,7 +48,6 @@ Plugin 'mbbill/undotree'
 Plugin 'kannokanno/previm'
 Plugin 'arecarn/crunch.vim'
 Plugin 'arecarn/selection.vim'
-Plugin 'ashisha/image.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'godlygeek/tabular'
@@ -120,7 +119,7 @@ filetype plugin indent on
 "" code display setting {{{
 set modeline
 autocmd FileType c,cpp,objc,objcpp,java,cs,asm,vhdl,ruby,eruby,python set textwidth=80
-autocmd FileType html,css,javascript,less,sass,scss,elm,matlab,r,vim set textwidth=80
+autocmd FileType html,css,javascript,less,sass,scss,elm,matlab,r,vim set textwidth=100
 " code folding
 autocmd FileType c,cpp,objc,objcpp,java,javascript,css,php setlocal foldmarker={,}
 autocmd FileType c,cpp,objc,objcpp,java,javascript,css,php setlocal foldmethod=marker
