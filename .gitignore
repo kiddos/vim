@@ -1,10 +1,9 @@
 # ignore everything in bundle
 bundle/*
 
-# except
-!./bundle/Vundle.vim
-
 # ignore .swp files
+
 *.swp
+
 # ignore .pyc files
 *.pyc
